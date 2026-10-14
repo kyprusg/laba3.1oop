@@ -48,7 +48,7 @@ namespace OOP_Lab3_Circles
         {
             int dx = px - _x;
             int dy = py - _y;
-            return (dx*dx + dy*dy) > _radius * _radius;
+            return (dx*dx + dy*dy) <= _radius * _radius;
         }
     }
 }

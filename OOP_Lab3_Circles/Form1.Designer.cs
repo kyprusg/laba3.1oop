@@ -28,20 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.paintBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.paintBox)).BeginInit();
             this.SuspendLayout();
+            // 
+            // paintBox
+            // 
+            this.paintBox.BackColor = System.Drawing.Color.White;
+            this.paintBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.paintBox.Location = new System.Drawing.Point(0, 0);
+            this.paintBox.Name = "paintBox";
+            this.paintBox.Size = new System.Drawing.Size(910, 531);
+            this.paintBox.TabIndex = 0;
+            this.paintBox.TabStop = false;
+            this.paintBox.Paint += new System.Windows.Forms.PaintEventHandler(this.paintBox_Paint);
+            this.paintBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paintBox_MouseDown);
+            this.paintBox.Resize += new System.EventHandler(this.paintBox_Resize);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 531);
+            this.Controls.Add(this.paintBox);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.paintBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox paintBox;
     }
 }
 

@@ -12,23 +12,22 @@ namespace OOP_Lab3_Circles
         private T[] _items;
         private int _count;
 
-        public MyStorage(int initialCapacity = 10)
+        public MyStorage()
         {
-            if (initialCapacity <= 0)
-            {
-                initialCapacity = 10;
-            }
-            _items = new T[initialCapacity];
+            _items = new T[10];
             _count = 0;
         }
         public int GetCount() {  return _count; }
 
         public void Add(T item)
         {
-            if(_count == _items.Length)
+            if (_count == _items.Length)
             {
                 Resize(_items.Length * 2);
             }
+
+            _items[_count] = item;
+            _count++;
         }
         public T GetObject(int index) {  return _items[index]; }
         public void SetObject(int index, T item)
