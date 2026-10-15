@@ -20,12 +20,10 @@ namespace OOP_Lab3_Circles
             InitializeComponent();
             this.Text = "Лабораторная работа 3(часть1)";
             this.KeyPreview = true;
-            //typeof(PictureBox).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.SetValue(paintBox, true, null);
         }
 
         private void paintBox_MouseDown(object sender, MouseEventArgs e)
         {
-            //MessageBox.Show("Клик сработал!");
             if (e.Button != MouseButtons.Left) return;
 
             bool isCtrlPressed = (Control.ModifierKeys & Keys.Control) == Keys.Control;
@@ -100,7 +98,10 @@ namespace OOP_Lab3_Circles
             {
                 for (int i = _storage.GetCount()-1;  i >= 0; i--)
                 {
-                    _storage.RemoveAt(i);
+                    if (_storage.GetObject(i).isSelected())
+                    {
+                        _storage.RemoveAt(i);
+                    }
                 }
             }
             paintBox.Invalidate();
